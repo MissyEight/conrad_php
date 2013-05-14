@@ -1,0 +1,58 @@
+body {
+	font: 100% "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background: #232323;
+}
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+#container { 
+	width: 500px;
+	margin: 0 auto;
+	margin-top: 70px;
+	border: 2px solid #fff;
+	background: #444;
+	padding: 30px;
+}
+h1 {
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	font-family: 'Days One', sans-serif;
+	font-size: 40px;
+	font-weight: normal;
+}
+form{
+	background: #333333;
+	padding: 30px;
+	margin: 0 50px;
+	-webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+label {
+	color: #88AC55;
+	display: block;
+	margin-left: 43px;
+}
+input[type="text"], input[type="password"] {
+	width: 250px;
+	margin: 0 0 10px 43px; 
+}
+input[type="submit"] {
+	margin: 5px 0 0 43px; 
+}
+#errormsg {
+	color: orange;
+	margin-left: 75px;
+}
+a {
+	color: white;
+	font-size: 12px;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+#loggedin {
+	color: #88AC55;
+}
