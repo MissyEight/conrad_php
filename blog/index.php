@@ -5,53 +5,48 @@
 <head>
 <meta charset="utf-8">
 <title>Melissa's PHP Blog</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="css/format.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href='http://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700' rel='stylesheet' type='text/css'>
 </head>
 
-<body>		
+<body>
+<div id="wrapper">
+
 	<header>
 		<h1>Melissa's Blog</h1>
+		<nav>
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="index.php?page=blog">Blog</a></li>
+				<li><a href="index.php?page=links">Links</a></li>
+			</ul>
+		</nav>
 	</header>
-
-	<main>
-		<?php
-			// set up a query to get the latest 2 posts that are public
-			$query = 'SELECT title, body, date, category_id, post_id
-						FROM posts
-						WHERE is_public = 1
-						ORDER BY date DESC
-						LIMIT 2';
-			//run it and ck to make sure the result contains posts
-			if( $result = $db->query($query) ):
-		?>
-
-			<h2>Most Recent Posts:</h2>
-
-			<?php
-				// loop through the list of results
-				while( $row = $result->fetch_assoc() ):
+	<div id="container">
+		<main>
+			<?php 
+				//logic to load the correct page contents
+				//URI will look like domain/index.php?page=something, use $_GET to get a variable "page" in browser bar
+				switch( $_GET['page'] ){
+					case 'blog':
+						include( 'content-blog.php' );
+					break;
+					case 'links':
+						include( 'content-links.php' );
+					break;
+					default:
+						include('content-home.php');
+				}
 			?>
+		</main>
 
-			<article class="post">
-				<h3><?php echo $row['title']; ?></h3>
-				<div class="postmeta">Posted on <?php echo $row['date']; ?> | in the category NAME</div>
-				<p><?php echo $row['body']; ?></p>
-			</article>
-
-			<?php
-				endwhile;
-			?>
-
-		<?php else: ?>
-			<h2>No Posts to Show</h2>
-
-		<?php endif; ?>
-
-	</main>
-
-	<?php include('sidebar.php'); ?>
-
+		<?php include('sidebar.php'); ?>
+	</div> <!-- end container -->
 	<footer>
 		<p>&copy; 2013 Platt College</p>
 	</footer>
+
+</div> <!-- end wrapper -->
 </body>
 </html>

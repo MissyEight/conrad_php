@@ -1,0 +1,26 @@
+/*  http://theme.wordpress.com/themes/on-a-whim/  */
+
+body {
+	font: 100% "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background-color: Black;
+}
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+	margin-top: 10px;
+	
+}
+header {
+	background-image: url(../images/header_back.png);
+	width: 960px;
+	height: 317px;
+}
+#container {
+	background-image: url(../images/cont_back.png);
+	background-repeat: repeat-y;
+}
+footer{
+	background-image: url(../images/footer_back.png);
+	width: 960px;
+	height: 221px;	
+}
