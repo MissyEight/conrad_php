@@ -1,4 +1,4 @@
-<aside>
+<aside class="cf">
 		<?php 
 		// set up query to get the title & post_id of the latest 10 posts
 		$query_latest = "SELECT title, post_id
@@ -14,7 +14,7 @@
 				<?php 
 				// from the list of results, go through each row, one at a time
 				while( $row_latest = $results_latest->fetch_assoc() ): ?>
-					<li><a href="#"><?php echo $row_latest['title']; ?></a></li>
+					<li><a href="index.php?page=single&amp;post_id=<?php echo $row_latest['post_id']; ?>"><?php echo $row_latest['title']; ?></a></li>
 				<?php endwhile; ?>
 			</ul>
 		<?php endif; ?>

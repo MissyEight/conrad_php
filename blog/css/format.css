@@ -1,5 +1,3 @@
-/*  http://theme.wordpress.com/themes/on-a-whim/  */
-
 body {
 	font: 100% "Trebuchet MS", Arial, Helvetica, sans-serif;
 	background-color: Black;
@@ -10,17 +8,125 @@ body {
 	margin-top: 10px;
 	
 }
+
+/*************************************************************/
+/********************* Header Styles ************************/
+/************************************************************/
 header {
 	background-image: url(../images/header_back.png);
 	width: 960px;
 	height: 317px;
 }
+header h1 {
+	font-size: 40px;
+	color: DarkRed;
+	padding: 225px 0 0 60px;
+	font-family: 'Berkshire Swash', cursive;
+}
+header h1 a:link{
+	text-decoration: none;
+	color: DarkRed;
+}
+header h1 a:visited{
+	color: DarkRed;
+}
+			/*************************************************/
+			/*************** Primary Nav Styles **************/
+			/************************************************/
+header nav {
+	padding: 0 0 0 60px;
+	margin: 15px 0 0 0;
+	/*border: 1px solid green;*/
+}
+header nav li {
+	display: inline;
+	padding: 0 20px 0 20px;
+	/*border: 1px solid red;*/
+}
+header nav a {
+	color: black;
+	text-decoration: none;
+	font-weight: 600;
+}
+header nav a:hover {
+	color: Red;
+}
+
+
+
 #container {
 	background-image: url(../images/cont_back.png);
 	background-repeat: repeat-y;
 }
+
+/*************************************************************/
+/*********************** Main Styles ************************/
+/************************************************************/
+main {
+	margin: 0 300px 0 60px;
+	padding: 20px 15px 20px 15px;
+	float: left;
+	border: 1px solid black;
+}
+main h2 {
+	font-size: 17px;
+	font-family: 'Merienda', cursive;
+	font-weight: bold;
+	padding: 0 0 10px 0;
+}
+main h3.blog_title {
+	font-family: 'Merienda', cursive;
+	font-weight: bold;
+	color: DarkRed;
+}
+main h3.blog_title a {
+	color: DarkRed;
+	text-decoration: none;
+}
+main h3.blog_title a:hover {
+	color: Red;
+}
+
+
+
+
+
+
+			/*************************************************/
+			/****************** Form Styles *****************/
+			/************************************************/
+label{
+	display: block;
+}
+
+/*************************************************************/
+/*********************** Aside Styles ************************/
+/************************************************************/
+aside {
+	margin: 0 0 0 700px;
+	padding: 20px 0 20px 15px;
+	/*float: left;*/
+	border: 1px solid blue;
+}
+
+
 footer{
 	background-image: url(../images/footer_back.png);
 	width: 960px;
 	height: 221px;	
+}
+
+/*************************************/
+/************* clear fix *************/
+/*************************************/
+.cf:before, 
+.cf:after {
+	content: "";
+	display: block;
+}
+.cf:after {
+	clear: both;	
+}
+.cf {
+	zoom: 1; /* for old ie (trigger has layout) */	
 }

@@ -19,8 +19,8 @@
 			?>
 
 			<article class="post">
-				<h3><?php echo $row['title']; ?></h3>
-				<div class="postmeta">Posted on <?php echo $row['date']; ?>
+				<h3 class="blog_title"><a href="index.php?page=single&amp;post_id=<?php echo $row['post_id']; ?>"><?php echo $row['title']; ?></a></h3>
+				<div class="postmeta">Posted on <time datetime="<?php echo $row['date']; ?>"><?php echo convert_date($row['date']); ?></time>
 					| in the category <?php echo $row['name']; ?>
 					| By <?php echo $row['username']; ?>
 				</div>

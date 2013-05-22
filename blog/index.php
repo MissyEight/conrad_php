@@ -1,20 +1,23 @@
-<?php require('db_connect.php'); ?>
+<?php require('db_connect.php'); 
+include_once( 'functions.php' ); //include_once to avoid fatal errors in calling duplicate named fns
+?>
 
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Melissa's PHP Blog</title>
+<title>Captain's Blog</title>
 <link href="css/reset.css" rel="stylesheet" type="text/css" media="screen"/>
 <link href="css/format.css" rel="stylesheet" type="text/css" media="screen"/>
-<link href='http://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Merienda:400,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 <div id="wrapper">
 
 	<header>
-		<h1>Melissa's Blog</h1>
+		<h1><a href="index.php">Captain's Blog</a></h1>
 		<nav>
 			<ul>
 				<li><a href="index.php">Home</a></li>
@@ -34,6 +37,9 @@
 					break;
 					case 'links':
 						include( 'content-links.php' );
+					break;
+					case 'single':
+						include( 'content-single.php' );
 					break;
 					default:
 						include('content-home.php');
