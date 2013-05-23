@@ -10,7 +10,7 @@
 			<ul>
 				<?php 
 				while ( $row_links = $results_links->fetch_assoc() ):?>
-					<li><a href="<?php echo $row_links['url']?>" target="blank" ><?php echo $row_links['title']; ?></a> - <?php echo $row_links['description']?></li>
+					<li class="skullbullet"><a href="<?php echo $row_links['url']?>" target="blank" ><?php echo $row_links['title']; ?></a> - <?php echo $row_links['description']?></li>
 				<?php endwhile; ?>
 			</ul>	
 		<?php endif; ?>	

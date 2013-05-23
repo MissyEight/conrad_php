@@ -9,6 +9,7 @@ include_once( 'functions.php' ); //include_once to avoid fatal errors in calling
 <title>Captain's Blog</title>
 <link href="css/reset.css" rel="stylesheet" type="text/css" media="screen"/>
 <link href="css/format.css" rel="stylesheet" type="text/css" media="screen"/>
+<link rel="alternate" type="application/rss+xml" title="RSS Feed of Blog Posts" href="rss.php"/>
 <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Merienda:400,700' rel='stylesheet' type='text/css'>
 </head>
@@ -25,6 +26,7 @@ include_once( 'functions.php' ); //include_once to avoid fatal errors in calling
 				<li><a href="index.php?page=links">Links</a></li>
 			</ul>
 		</nav>
+		<!--<hr class="hrstyle1" />-->
 	</header>
 	<div id="container">
 		<main>

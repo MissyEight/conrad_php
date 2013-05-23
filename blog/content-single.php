@@ -28,7 +28,7 @@ include( 'comment-parse.php' );
 			| in the category <?php echo $row['name']; ?>
 			| By <?php echo $row['username']; ?>
 		</div>
-		<p><?php echo $row['body']; ?></p>
+		<p class="post_body"><?php echo $row['body']; ?></p>
 	</article>
 
 	<?php //get all the 'approved' comments on THIS post, oldest first
