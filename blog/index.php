@@ -52,7 +52,7 @@ include_once( 'functions.php' ); //include_once to avoid fatal errors in calling
 		<?php include('sidebar.php'); ?>
 	</div> <!-- end container -->
 	<footer>
-		<p>&copy; 2013 Platt College</p>
+		<p>&copy; 2013 Captain&#39;s Blog | Developed by <a href="http://www.theconradconcept.com" target="blank">The Conrad Concept</a></p>
 	</footer>
 
 </div> <!-- end wrapper -->

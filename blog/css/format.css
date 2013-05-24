@@ -75,8 +75,7 @@ main {
 	/*border: 1px solid black;*/
 }
 main h2 {
-	font-size: 17px;
-	/*font-family: 'Merienda', cursive;*/
+	font-size: 17px;	
 	font-weight: bold;
 	padding: 0 0 5px 0;
 }
@@ -105,8 +104,21 @@ article .post_body {
 	padding-bottom: 20px;
 }
 
-
-
+			/*************************************************/
+			/**************** Comments Styles ****************/
+			/************************************************/
+#comments h3 {
+	padding-bottom: 5px;
+}
+#comments ol {
+	padding-left: 50px;
+}
+#comments li {
+	padding-bottom: 10px;
+}
+#comments time {
+	font-size: 12px;
+}
 
 			/*************************************************/
 			/****************** Form Styles *****************/
@@ -114,18 +126,47 @@ article .post_body {
 label{
 	display: block;
 }
+#commentform h3	{
+	padding-top: 10px;
+}
+input[type="submit"] {
+    border: 0;
+    background: url('../images/post_btn.png') no-repeat;
+    text-indent: -9999em;
+    width: 74px;
+    height: 72px;
+    cursor: pointer;
+}
 
 /*************************************************************/
 /*********************** Aside Styles ************************/
 /************************************************************/
 aside {
-	/*margin: 0 0 0 700px;*/
 	padding: 20px 0 0 40px;
 	margin-left: 700px;
-	/*float: left;*/
-	/*border: 1px solid blue;*/
+}
+aside h2 {
+	font-size: 16px;
+	padding: 18px 0 5px 0;
+}
+aside li {
+	font-size: 12px;
+	padding-bottom: 3px;
+}
+.rss {
+	font-family: 'Merienda', cursive;
+}
+.rss a {
+	color: DarkRed;
+	text-decoration: none;
+}
+.rss a:hover {
+	color: red;
 }
 
+			/*************************************************/
+			/***************** Bullet Styles *****************/
+			/************************************************/
 .skullbullet {
 	list-style-image: url(../images/bullet.png);
 }
@@ -135,18 +176,30 @@ aside {
 	color: DarkRed;
 	text-decoration: none;	
 }
+.skullbullet a:hover {
+	color: red;
+}
 
 
-
-
-
-
-
-
+/*************************************************************/
+/********************** Footer Styles ***********************/
+/************************************************************/
 footer{
 	background-image: url(../images/footer_back.png);
 	width: 960px;
 	height: 221px;	
+}
+footer p {
+	padding-top: 68px;
+	text-align: center;
+	font-size: 12px;
+}
+footer a {
+	color: DarkRed;
+	text-decoration: none;
+}
+footer a:hover {
+	color: red;
 }
 
 /*************************************/
