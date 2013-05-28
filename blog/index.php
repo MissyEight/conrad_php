@@ -26,6 +26,7 @@ include_once( 'functions.php' ); //include_once to avoid fatal errors in calling
 				<li><a href="index.php?page=links">Links</a></li>
 			</ul>
 		</nav>
+		<?php include('searchform.php'); ?>
 		<!--<hr class="hrstyle1" />-->
 	</header>
 	<div id="container">
@@ -43,6 +44,9 @@ include_once( 'functions.php' ); //include_once to avoid fatal errors in calling
 					case 'single':
 						include( 'content-single.php' );
 					break;
+					case 'search':
+						include( 'content-search.php' );
+					break;
 					default:
 						include('content-home.php');
 				}
@@ -51,7 +55,7 @@ include_once( 'functions.php' ); //include_once to avoid fatal errors in calling
 
 		<?php include('sidebar.php'); ?>
 	</div> <!-- end container -->
-	<footer>
+	<footer class="mainfooter">
 		<p>&copy; 2013 Captain&#39;s Blog | Developed by <a href="http://www.theconradconcept.com" target="blank">The Conrad Concept</a></p>
 	</footer>
 

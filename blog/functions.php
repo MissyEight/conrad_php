@@ -33,3 +33,21 @@ function comments_number( $number ){
 function clean_input( $input, $link ){
 	return mysqli_real_escape_string($link, strip_tags(trim($input)));
 }
+
+/**
+ * Shortens a piece of post content;
+ * arguments(body of text, amt of words displayed, min length of word displayed so words are not split up, $id passes link id so "read more" goes to specific article)
+ */
+function shorten_post($str, $length, $minword = 3, $id){
+    $sub = '';
+    $len = 0;   
+    foreach (explode(' ', $str) as $word){
+        $part = (($sub != '') ? ' ' : '') . $word;
+        $sub .= $part;
+        $len += strlen($part);       
+        if (strlen($word) > $minword && strlen($sub) >= $length){
+            break;
+        }
+    }   
+    return $sub . (($len < strlen($str)) ? '<span class="ellipses">&hellip;</span> <a href="?page=single&amp;post_id='.$id.'">Read more</a>' : '');
+}

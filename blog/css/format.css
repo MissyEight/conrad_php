@@ -65,6 +65,81 @@ header nav a:hover {
 }
 
 /*************************************************************/
+/******************** Search Bar Styles **********************/
+/************************************************************/
+
+
+			/*************************************************/
+			/*************** Search Form Styles **************/
+			/************************************************/
+#searchform {
+	padding: 0 0 0 738px;
+	display: inline;
+	position: relative;
+}
+.visually-hidden {
+	border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+#searchbtn {
+	background-color: transparent;
+	cursor: pointer;
+	border: 0px;
+	position: absolute;
+	top:10%;
+	left:96%;
+}
+
+			/*************************************************/
+			/************ Search Results Styles **************/
+			/************************************************/
+#search_results_list {
+	padding: 10px 0;
+}
+article.post a {
+	color: DarkRed;
+	text-decoration: none;
+	font-family: 'Merienda', cursive;
+}
+article.post a:hover {
+	color: red;
+}
+article.post{
+	padding: 0 0 10px 25px;
+}
+article.post .searchsnippet a{
+	font-family: Trebuchet MS;
+	font-size: 14px;
+	text-decoration: underline;
+}
+			/*************************************************/
+			/************ Search Footer Styles **************/
+			/************************************************/
+
+.button {
+	color: DarkRed;
+	padding: .25em;
+	display: inline-block;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.button:hover{
+	color: red;
+}
+.disabled.button {
+	color: BurlyWood;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+/*************************************************************/
 /*********************** Main Styles ************************/
 /************************************************************/
 main {
@@ -121,15 +196,21 @@ article .post_body {
 }
 
 			/*************************************************/
-			/****************** Form Styles *****************/
+			/********* Comment Input Form Styles ************/
 			/************************************************/
-label{
+label {
 	display: block;
+}
+input {
+	border: 1px solid BurlyWood;
+}
+textarea {
+	border: 1px solid BurlyWood;
 }
 #commentform h3	{
 	padding-top: 10px;
 }
-input[type="submit"] {
+#postbtn { /*input[type="submit"] {*/
     border: 0;
     background: url('../images/post_btn.png') no-repeat;
     text-indent: -9999em;
@@ -184,23 +265,23 @@ aside li {
 /*************************************************************/
 /********************** Footer Styles ***********************/
 /************************************************************/
-footer{
+.mainfooter{
 	background-image: url(../images/footer_back.png);
 	width: 960px;
 	height: 221px;	
 }
-footer p {
+.mainfooter p {
 	padding-top: 68px;
 	text-align: center;
 	font-size: 12px;
 }
-footer a {
+.mainfooter a {
 	color: DarkRed;
 	text-decoration: none;
 }
-footer a:hover {
+.mainfooter a:hover {
 	color: red;
-}
+}			
 
 /*************************************/
 /************* clear fix *************/

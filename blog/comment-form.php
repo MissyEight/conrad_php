@@ -21,7 +21,7 @@
 		<label for="comment">Comment</label>
 		<textarea name="comment" id="comment" required="required" placeholder=" Required"></textarea>
 
-		<input type="submit" value="Post" />
+		<input type="submit" value="Post" id="postbtn" />
 		<input type="hidden" name="did_comment" value="1" />
 
 	</form>
