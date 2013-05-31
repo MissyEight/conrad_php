@@ -1,7 +1,7 @@
 <?php 
-	session_start();
-	require('db_connect.php');
-	include_once('functions.php');
+session_start();
+require('db_connect.php');
+include_once('functions.php');
 
 //parse the form!
 if( 1 == $_REQUEST['did_register'] ):
@@ -9,8 +9,8 @@ if( 1 == $_REQUEST['did_register'] ):
 	$username = clean_input( $_REQUEST['username'], $db );
 	$email = clean_input( $_REQUEST['email'], $db );
 	$password = clean_input( $_REQUEST['password'], $db );
-	$repassword = clean_input( $_REQUEST['repassword'], $db );
-	$policy = clean_input( $_REQUEST['policy'], $db );
+	$repassword = clean_input( $_REQUEST['repassword'], $db );	
+	$policy = clean_input( $_REQUEST['policy'], $db );	
 
 	//hashed version of the password
 	$sha_password = sha1($password);
@@ -27,12 +27,12 @@ if( 1 == $_REQUEST['did_register'] ):
 		$query_username = "SELECT username 
 							FROM users 
 							WHERE username = '$username'
-							LIMIT 1 ";
+							LIMIT 1";
 		$result_username = $db->query($query_username);
 		//if one result is found, the username is TAKEN!
 		if( $result_username->num_rows == 1 ):
 			$valid = false;
-			$msg .= 'The userrname you chose is already taken. Try another. <br />';
+			$msg .= 'The username you chose is already taken. Try another. <br />';
 		endif;
 	endif;
 
@@ -55,9 +55,9 @@ if( 1 == $_REQUEST['did_register'] ):
 	endif;
 
 	//is the password too short
-	if( strlen($password) < 5 ):
+	if( strlen( $password ) < 5 ):
 		$valid = false;
-		$msg .= 'Your password must be at leat 5 characters long. <br />';
+		$msg .= 'Your password must be at least 5 characters long. <br />';
 	endif;
 
 	//mismatched passwords
@@ -76,27 +76,28 @@ if( 1 == $_REQUEST['did_register'] ):
 	if( true == $valid ):
 		$query_insert = "INSERT INTO users
 						( username, password, email, join_date, is_admin )
-						VALUES 
-						( '$username', '$sha_password', '$email', now(), 1 )"; //0 for is_admin for not admin
+						VALUES
+						( '$username', '$sha_password', '$email', now(), 1 )";
 		$result_insert = $db->query($query_insert);
 		//check to make sure one row was added
 		if( 1 == $db->affected_rows ):
 			//LOG THEM IN
-			// use cookies and sessions to remember the user
+			//use cookies and sessions to remember the user
 			$_SESSION['logged_in'] = 1;
-			setcookie( 'logged_in', 1, time() + 60 * 60 * 24 * 14); // session and cookie logged_in are 2 different things (name, value, when expires seconds*minutes*hrs*days(=2weeks))
+			setcookie( 'logged_in', 1, time() + 60 * 60 * 24 * 14 );
+			$_SESSION['user_id'] = $db->insert_id;
+			setcookie( 'user_id', $db->insert_id, time() + 60 * 60 * 24 * 14 );
 			//direct the now logged-in user to the admin panel
 			header( 'Location:admin.php' );
 		else:
 			$msg .= 'Something went wrong, try again.';
 		endif; //query insert worked
 
-	endif; //form is valid
 
+	endif; //form is valid
 endif; // did register
 
-?>
-
+ ?>
 
 <!doctype html>
 <html>
