@@ -14,20 +14,19 @@ include_once( 'functions.php' ); //include_once to avoid fatal errors in calling
 <link href='http://fonts.googleapis.com/css?family=Merienda:400,700' rel='stylesheet' type='text/css'>
 </head>
 
-<body>
+<body <?php echo mc_body_class(); ?>>
 <div id="wrapper">
 
 	<header>
 		<h1><a href="index.php">Captain's Blog</a></h1>
 		<nav>
 			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="index.php?page=blog">Blog</a></li>
-				<li><a href="index.php?page=links">Links</a></li>
+				<li class="home"><a href="index.php">Home</a></li>
+				<li class="blog"><a href="index.php?page=blog">Blog</a></li>
+				<li class="links"><a href="index.php?page=links">Links</a></li>
 			</ul>
 		</nav>
 		<?php include('searchform.php'); ?>
-		<!--<hr class="hrstyle1" />-->
 	</header>
 	<div id="container">
 		<main>

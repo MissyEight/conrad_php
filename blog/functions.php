@@ -109,8 +109,17 @@ function count_user_comments( $link, $user_id, $status = 1 ){
 	return $row['total'];
 }
 
-
-
+/**
+ * Dynamically change the class (for the <body> tag) based on the page
+ * @return mixed class="page"
+ */
+function mc_body_class(){
+	$page = $_GET['page'];
+	if($page == ''){
+		$page = 'home';
+	}
+	return $body_class='class="'.$page.'"';
+}
 
 
 
