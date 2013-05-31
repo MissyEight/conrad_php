@@ -36,9 +36,16 @@ if( $_POST['did_login'] == 1 ){
 
 		// if one record is found, log them in
 		if ( 1 == $result->num_rows  ) {
+			$row = $result->fetch_assoc();
+
 			// use cookies and sessions to remember the user
 			$_SESSION['logged_in'] = 1;
-			setcookie( 'logged_in', 1, time() + 60 * 60 * 24 * 14); // session and cookie logged_in are 2 different things (name, value, when expires seconds*minutes*hrs*days(=2weeks))
+			setcookie( 'logged_in', 1, time() + 60 * 60 * 24 * 14 ); // session and cookie logged_in are 2 different things (name, value, when expires seconds*minutes*hrs*days(=2weeks))
+
+			//WHO is logged in?
+			$_SESSION['user_id'] = $row['user_id'];
+			setcookie('user_id', $row['user_id'], time() + 60 * 60 * 24 * 14 );
+
 			//direct the now logged-in user to the admin panel
 			header( 'Location:admin.php' );
 		}else{

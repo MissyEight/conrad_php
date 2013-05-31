@@ -108,6 +108,8 @@ endif; // did register
 <link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div id="wrapper">
+<div id="container">
 	<h1>Sign Up!</h1>
 
 	<?php 
@@ -131,12 +133,13 @@ endif; // did register
 		<input type="password" name="repassword" id="repassword" required />
 
 		<input type="checkbox" name="policy" id="policy" value="1" required />
-		<label for="policy">I agree to the <a href="#">terms of service and privacy policy</a>.</label>
+		<label for="policy" id="policy_label">I agree to the <a href="#">terms of service and privacy policy</a>.</label><br/>
 
 		<input type="submit" value="Sign Up!" />
 		<input type="hidden" name="did_register" value="1" />
 
 	</form>
-
+</div>
+</div>
 </body>
 </html>

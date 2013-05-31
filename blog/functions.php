@@ -51,3 +51,76 @@ function shorten_post($str, $length, $minword = 3, $id){
     }   
     return $sub . (($len < strlen($str)) ? '<span class="ellipses">&hellip;</span> <a href="?page=single&amp;post_id='.$id.'">Read more</a>' : '');
 }
+
+/**
+ * Returns the number of posts for any user.
+ *
+ * @param $link resource - mysgli connect link
+ * @param $user_id int - provide any user id
+ * @param $status int - OPTIONAL. What kind of posts are we counting?
+ * 						1 => DEFAULT. only count public posts
+ *						2 => only show private posts
+ *						3 => count all posts
+ * @return int - total number of posts
+ * @todo hey, make this better!
+ */
+function count_posts( $link, $user_id, $status = 1 ){
+	$query = "SELECT COUNT(*) AS total 
+				FROM posts
+				WHERE user_id = $user_id";
+	//depending on the status argument, refine the query to get the right posts
+	if( 1 == $status ):
+		$query .= ' AND is_public = 1'; //posts that are public
+	elseif( 2 == $status ):
+		$query .= ' AND is_public = 0'; //posts that are not public
+	endif;
+
+	//run it!
+	$result = $link->query($query);
+	$row = $result->fetch_assoc();
+	return $row['total'];
+}
+
+/**
+ *  Count the number of total comments for any user's posts
+ * @param $link resource - mysgli connect link
+ * @param $user_id int - provide any user id
+ * @param $status int - OPTIONAL. What kind of comments are we counting?
+ * 						1 => DEFAULT. only count approved comments
+ *						2 => only count unapproved comments
+ *						3 => count all comments by this user's posts
+ * @return int - number of comments
+ */
+function count_user_comments( $link, $user_id, $status = 1 ){
+	$query = "SELECT COUNT(*) AS total
+				FROM comments 
+				LEFT JOIN posts
+				ON posts.post_id = comments.post_id 
+				WHERE posts.user_id = $user_id";
+	if( 1 == $status ):
+		$query .= ' AND comments.is_approved = 1';
+	elseif( 2 == $status ):
+		$query .= ' AND comments.is_approved = 0';
+	endif;
+
+	$result = $link->query($query);
+	$row = $result->fetch_assoc();
+
+	return $row['total'];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

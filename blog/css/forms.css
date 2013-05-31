@@ -1,78 +1,77 @@
-	body {
-		font: 100% "Trebuchet MS", Arial, Helvetica, sans-serif;
-		background: #232323;
-	}
-	#wrapper {
-		width: 960px;
-		margin: 0 auto;
-	}	
-	#container { 
-		width: 500px;
-		margin: 0 auto;
-		margin-top: 70px;
-		border: 2px solid #fff;
-		background: #444;
-		padding: 30px;
-	}
-	h1 {
-		color: #fff;
-		padding: 20px;
-		text-align: center;
-		font-family: 'Days One', sans-serif;
-		font-size: 40px;
-		font-weight: normal;
-	}
-	form{
-		background: #333333;
-		padding: 30px;
-		margin: 0 50px;
-		-webkit-border-radius: 10px;
-    	border-radius: 10px;
-	}
-	label {
-		color: #88AC55;
-		display: block;
-		margin: 0 0 3px 43px;
-	}
-/*	#newsletter_label {
-		display: inline;
-		margin: 0 0 3px 15px;
-	}
-	#newsletter {
-		margin: 0 0 3px 43px;
-	}*/
-/*	input[type=text],
-	textarea{
-		display: block;
-		width: 250px;
-		margin: 0 0 10px 43px; 
-	}	*/
-input {
-	margin: 0 0 10px 43px;
-	width: 250px;
+body {
+	font: 100% "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background: #232323;
 }
-
-	input[type=submit]{
-		width: 75px;
-		margin: 10px 0 3px 43px;
-		padding: 5px 7px;
-		background-color: Darkorange;
-		color: white;
-		font-weight: bold;
-	}
-	input[type=submit]:hover{
-		background-color: orange;
-	}
-	.success{
-		margin: 0 0 10px 43px; 
-		color: #88AC55;
-	}
-	.error{
-		margin: 0 0 10px 43px; 
-		color: orange;
-	}
-
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+}	
+#container { 
+	width: 600px;
+	margin: 0 auto;
+	margin-top: 70px;
+	border: 2px solid #fff;
+	background: #444;
+	padding: 30px;
+}
+h1 {
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	font-family: 'Days One', sans-serif;
+	font-size: 40px;
+	font-weight: normal;
+}	
+form{
+	background: #333333;
+	padding: 30px;
+	margin: 0 50px;
+	-webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+label {
+	color: #88AC55;
+	display: block;
+	margin: 0 0 3px 43px;
+}	
+input[type=text], input[type=email], input[type=password]{
+	display: block;
+	width: 250px;
+	margin: 0 0 10px 43px; 
+}
+#policy_label {
+	display: inline;
+	margin: 0 0 3px 15px;
+}
+#policy_label a {
+	color: white;
+}
+#policy_label a:hover {
+	color: orange;
+}
+#policy {
+	margin: 0 0 3px 43px;
+}
+input[type=submit]{
+	width: 75px;
+	margin: 10px 0 3px 43px;
+	padding: 5px 7px;
+	background-color: Darkorange;
+	color: white;
+	font-weight: bold;
+}
+input[type=submit]:hover{
+	background-color: orange;
+}
+.success{
+	margin: 0 0 10px 43px; 
+	color: #88AC55;
+}
+.error{
+	margin: 0 0 10px 43px; 
+	color: orange;
+}
 #errormsg{
-		margin: 0 0 10px 75px; 
-		color: orange;
-	}
+	margin: 0 0 10px 75px; 
+	color: orange;
+}
