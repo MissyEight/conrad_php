@@ -35,7 +35,7 @@ $userpic = $row_user['avatar_link'];
 		<ul class="utilities">
 			<li class="loggedin">You are logged in as <?php echo $username; ?></li>
 			<li class="logout"><a href="login.php?action=logout">Log Out</a></li>
-			<li><a href="index.php">View Blog</a></li>
+			<li><a href="index.php?page=blog">View Blog</a></li>
 		</ul>
 		<nav>
 			<ul>
@@ -55,16 +55,13 @@ $userpic = $row_user['avatar_link'];
 			case 'write':
 				include('admin-write.php');
 			break;
-			case 'manage':
+			case 'write':
 				include('admin-manage.php');
 			break;
-			case 'edit':
-				include('admin-edit.php');
-			break;
-			case 'comments':
+			case 'write':
 				include('admin-comments.php');
 			break;
-			case 'profile':
+			case 'write':
 				include('admin-profile.php');
 			break;	
 

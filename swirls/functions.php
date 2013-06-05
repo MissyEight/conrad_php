@@ -49,7 +49,7 @@ function shorten_post($str, $length, $minword = 3, $id){
             break;
         }
     }   
-    return $sub . (($len < strlen($str)) ? '<span class="ellipses">&hellip;</span> <a href="?page=single&amp;post_id='.$id.'">Read more</a>' : '');
+    return $sub . (($len < strlen($str)) ? '<span class="ellipses">&hellip;</span> <a href="?page=blog-single&amp;post_id='.$id.'">Read more</a>' : '');
 }
 
 /**
@@ -66,7 +66,7 @@ function shorten_post($str, $length, $minword = 3, $id){
  */
 function count_posts( $link, $user_id, $status = 1 ){
 	$query = "SELECT COUNT(*) AS total 
-				FROM posts
+				FROM blog_posts
 				WHERE user_id = $user_id";
 	//depending on the status argument, refine the query to get the right posts
 	if( 1 == $status ):
@@ -93,10 +93,10 @@ function count_posts( $link, $user_id, $status = 1 ){
  */
 function count_user_comments( $link, $user_id, $status = 1 ){
 	$query = "SELECT COUNT(*) AS total
-				FROM comments 
-				LEFT JOIN posts
-				ON posts.post_id = comments.post_id 
-				WHERE posts.user_id = $user_id";
+				FROM blog_comments 
+				LEFT JOIN blog_posts
+				ON blog_posts.post_id = blog_comments.post_id 
+				WHERE blog_posts.user_id = $user_id";
 	if( 1 == $status ):
 		$query .= ' AND comments.is_approved = 1';
 	elseif( 2 == $status ):

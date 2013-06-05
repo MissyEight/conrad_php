@@ -121,8 +121,17 @@ function mc_body_class(){
 	return $body_class='class="'.$page.'"';
 }
 
-
-
+/**
+ * Convert boolean to "is public" or "is private"
+ * @param $status status - Pass the value of is_public from the database
+ */
+function is_it_public( $status ){
+	if( $status == 1 ):
+		return '<span class="published">Public</span>';
+	else:
+		return '<span class="draft">Private</span>';
+	endif;
+}
 
 
 
