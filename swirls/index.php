@@ -43,6 +43,9 @@ include_once( 'functions.php' ); //include_once to avoid fatal errors in calling
 					case 'cupcakes':
 						include( 'content-cupcakes.php' );
 					break;
+					case 'shop-category':
+						include( 'content-category.php' );
+					break;
 					case 'single':
 						include( 'content-single.php' );
 					break;

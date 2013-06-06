@@ -6,7 +6,7 @@ $pagenum = 1; // set the starting page number
 //what phrase did they search for?
 $phrase = $_GET['phrase'];
 
-//get all posts and comments that are similar to the query, make sure the posts are distinct
+//get all posts and comments that are similar to the query, make sure the posts are distinct = means only shows same post once
 $query_search = "SELECT distinct *
   				FROM blog_posts
 				WHERE is_public = 1
