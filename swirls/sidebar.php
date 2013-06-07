@@ -9,10 +9,10 @@
 	if( $results_categories = $db->query($query_categories) ):
 	?>	
 		<h2>Categories</h2>
-		<ul>
+		<ul class="sidenav">
 			<?php 
 			while ( $row_categories = $results_categories->fetch_assoc() ):?>
-				<li class="skullbullet"><a href="index.php?page=shop-category&amp;shop_cat=<?php echo $row_categories['category_id'] ?>"><?php echo $row_categories['name']; ?></a></li>
+				<li><a href="index.php?page=shop-category&amp;shop_cat=<?php echo $row_categories['category_id'] ?>"><?php echo $row_categories['name']; ?></a></li>
 
 				<?php
 				//set a category id
@@ -30,8 +30,8 @@
 				?>
 
 				<article>
-					<ul>
-					<li><a href="index.php?page=single&amp;product_id=<?php echo $row['product_id']; ?>"><?php echo $row['title']; ?></a></li>
+					<ul class="side-products">
+						<li><a href="index.php?page=single&amp;product_id=<?php echo $row['product_id']; ?>"><?php echo $row['title']; ?></a></li>
 					</ul>
 				</article>
 

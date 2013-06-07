@@ -22,7 +22,13 @@ $product_id = $_GET['product_id'];
 		<p class="product_price"><?php echo $row['price']; ?></p>
 	</article>
 
-	
+	<article>
+		<h4>Suggested Cupcakes</h4>
+	</article>	
+
+	<article>
+		<h5>Customer Reviews</h5>
+	</article>
 
 	<?php
 	endwhile; //product was found
