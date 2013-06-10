@@ -33,12 +33,18 @@ input {
 	box-sizing: border-box;
 }
 
+body {
+	background-image: url(../images/top_pattern.png);
+	background-repeat: repeat-x;
+}
+
 /*************************************************************/
 /********************* Wrapper Styles ************************/
 /************************************************************/
-#wrapper {
-	background-image: url(../images/top_pattern.png);
-	background-repeat: repeat-x;
+#wrapper {	
+	width: 93.75%; /* content 960px / container 1024px */
+	margin: 0 auto;	
+	border: solid 1px #FF0000; /*red*/
 }
 
 
@@ -169,8 +175,169 @@ header nav ul li {
 }
 
 /*************************************************************/
+/******************* Home Page Styles *********************/
+/************************************************************/
+
+			/*************************************************/
+			/*************** Slideshow Styles ***************/
+			/************************************************/
+#slides {
+	display: none;
+	margin-top: 50px;
+}
+#slides .slidesjs-navigation {
+    margin-top: 5px;
+}
+a.slidesjs-next,
+a.slidesjs-previous,
+a.slidesjs-play,
+a.slidesjs-stop {
+	background-image: url(../images/btns-next-prev.png);
+    background-repeat: no-repeat;
+    display:block;
+    width:12px;
+    height:18px;
+    overflow: hidden;
+    text-indent: -9999px;
+    float: left;
+    margin-right:5px;
+}
+a.slidesjs-next {
+	margin-right:10px;
+    background-position: -12px 0;
+}
+a:hover.slidesjs-next {
+	background-position: -12px -18px;
+}
+a.slidesjs-previous {
+    background-position: 0 0;
+}
+a:hover.slidesjs-previous {
+	background-position: 0 -18px;
+}
+a.slidesjs-play {
+	width:15px;
+    background-position: -25px 0;
+}
+a:hover.slidesjs-play {
+	background-position: -25px -18px;
+}
+a.slidesjs-stop {
+	width:18px;
+    background-position: -41px 0;
+}
+a:hover.slidesjs-stop {
+    background-position: -41px -18px;
+}
+.slidesjs-pagination {
+	margin: 7px 0 0;
+    float: right;
+    list-style: none;
+}
+.slidesjs-pagination li {
+    float: left;
+    margin: 0 1px;
+}
+.slidesjs-pagination li a {
+	display: block;
+    width: 13px;
+    height: 0;
+    padding-top: 13px;
+    background-image: url(../images/pagination.png);
+    background-position: 0 0;
+    float: left;
+    overflow: hidden;
+}
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+	background-position: 0 -13px;
+}
+.slidesjs-pagination li a:hover {
+	background-position: 0 -26px;
+}
+/* SlidesJS Required: These styles are required for a responsive slideshow */
+/* Prevents slides from flashing */
+/*#slides {
+	display: none;
+}*/
+.slides-container {
+	margin: 0 auto;
+}
+/* For tablets & smart phones */
+/*@media (max-width: 767px) {
+	body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .slides-container {
+        width: auto;
+    }
+}
+/* For smartphones */
+/*@media (max-width: 480px) {
+	.slides-container {
+        width: auto;
+    }
+}
+/* For smaller displays like laptops */
+/*@media (min-width: 768px) and (max-width: 979px) {
+	.slides-container {
+        width: 724px;
+    }
+}
+/* For larger displays */
+/*	.slides-container {
+        width: 1170px;
+    }
+}
+/*SlidesJS Required:*/
+
+			/*************************************************/
+			/*************** C2A Button Styles ***************/
+			/************************************************/
+
+a.c2a-btn {
+	display: block;
+	width: 181px;
+	height: 40px;
+	background: url(../images/c2a-btn.jpg) no-repeat;
+	text-indent: -9999px; /*hide font text*/
+	position: absolute;
+ 	/*margin: -14.65% 0 0 66%;*/
+	margin: -130px 0 0 15%;
+	z-index: 10;
+	opacity: 1;
+	filter: Alpha(opacity=100); /* IE8 and earlier*/	
+}
+a.c2a-btn:hover {
+	opacity: 0.7;
+	filter: Alpha(opacity=70); /* IE8 and earlier*/
+}
+
+			/*************************************************/
+			/************** Home Image Styles ****************/
+			/************************************************/
+.lowerpage {
+	margin: 15px 0 40px 0;
+	border: 1px solid blue;
+}
+.lowerpage a img {
+	width:100%;
+	opacity: 1;
+	filter: Alpha(opacity=100); /* IE8 and earlier*/	
+}
+.lowerpage a:hover img {
+	opacity: 0.7;
+	filter: Alpha(opacity=70); /* IE8 and earlier*/
+}
+
+/*************************************************************/
 /***************** Internal Pages Styles *********************/
 /************************************************************/
+main {
+	/*border: 1px solid darkRed;*/
+}
+
 h3 {
 	margin-top: 50px;
 	/*border: 1px solid green;*/
@@ -222,6 +389,8 @@ vertical-align: baseline;
 	background-repeat: repeat-x;
 	background-color: #ff5500;
 	clear: both;
+	border: 1px solid black;
+	margin-top: 50px;
 }
 #mainfoot{
 	display: block;
@@ -249,10 +418,81 @@ vertical-align: baseline;
 	border-right: 1px solid white;
 	/*border: 1px solid black;*/
 }
-footer p {
+footer p.smallprint {
 	font-size: 12px;
 	padding: 20px;
 }
+
+#footer-signup {
+	/*margin: -70px 0 0 50px;*/
+	/*float: left;*/
+
+	/*border: 1px solid green;*/
+}
+#footer-subtitle {
+	font-size: 20px;
+	margin: 0 20px 0 50px;
+	float: left;
+	color: #FF5500; 	
+}
+#footer-text {
+	font-size: 14px;
+	margin: -50px 0 0 0;
+	padding-bottom: 5px;
+	color: #252525;	
+}
+#footer_privacy {
+	font-size: 12px;
+	margin: 0 0 0 254px;
+	padding: 3px 0;
+}
+input[type="email"].quick-email {
+	width: 250px;
+	border: 1px solid #FF5500;
+}
+
+.social_links {
+	float: right;
+	list-style: none;
+	margin: -70px 50px 0 0;
+}
+.social_links li {
+   	display: inline;
+	text-indent: -9999px;
+}
+.social_links li a {
+	width: 30px;
+    height: 31px;
+	margin: 0 0 0 29px;
+    background-image: url(../images/social_btns.png);
+    float: left;
+    overflow: hidden;
+}
+a.facebook {
+    background-position: 1px 1px;
+}
+a:hover.facebook {
+	background-position: 1px -32px;
+}
+a.twitter {
+    background-position: -32px 1px;
+}
+a:hover.twitter {
+	background-position: -32px -32px;
+}
+a.youtube {
+    background-position: -63px 1px;
+}
+a:hover.youtube {
+	background-position: -63px -32px;
+}
+a.google {
+    background-position: -94px 1px;
+}
+a:hover.google {
+	background-position: -94px -32px;
+}
+
 
 /*
 	== Grid Panels
@@ -289,9 +529,29 @@ footer p {
 	width: 32%;
 	float: left;
 	margin-right: 1%;
+	border: 1px solid orange;
 }
 .twothirds {
 	width: 65%;
 	float: left;
 	margin-right: 1%;
+}
+
+.center {
+	text-align: center;
+}
+
+/*************************************/
+/************* clear fix *************/
+/*************************************/
+.cf:before, 
+.cf:after {
+	content: "";
+	display: block;
+}
+.cf:after {
+	clear: both;	
+}
+.cf {
+	zoom: 1; /* for old ie (trigger has layout) */	
 }

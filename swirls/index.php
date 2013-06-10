@@ -10,9 +10,13 @@ include_once( 'functions.php' ); //include_once to avoid fatal errors in calling
 <link href="css/reset.css" rel="stylesheet" type="text/css" media="screen"/>
 <link href="css/format.css" rel="stylesheet" type="text/css" media="screen"/>
 <link rel="alternate" type="application/rss+xml" title="RSS Feed of Swirls Blog" href="rss.php"/>
+<!--<link rel="shortcut icon" href="images/favicon.png"/>-->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.slides.min.js"></script>
+<script src="js/ss.js" type="text/javascript"></script>
 </head>
-<body <?php echo mc_body_class(); ?> id="wrapper">
-<!--<div id="wrapper">-->
+<body <?php echo mc_body_class(); ?>>
+<div id="wrapper">
 	<header>
 		<h1><a href="index.php">Swirls</a></h1>
 		<h2 id="tagline">Send someone a smile!</h2>
@@ -31,7 +35,7 @@ include_once( 'functions.php' ); //include_once to avoid fatal errors in calling
 			</ul>
 		</nav>
 	</header>
-<!--	<div id="container">-->
+
 		<main>
 			<?php 
 				//logic to load the correct page contents
@@ -83,10 +87,26 @@ include_once( 'functions.php' ); //include_once to avoid fatal errors in calling
 						include('content-home.php');
 				}
 			?>
-		</main>		
+		</main>	
+</div> <!--end wrapper -->	
 <!--	</div>  end container -->
-	<footer class="mainfooter">
-		<h3 class="rss"><a href="rss.php">Subscribe to Feed</a></h3>
+	<footer class="mainfooter">		
+		<section id="footer-signup" >
+        		<p id="footer-subtitle">Join Our Mailing List</p>	            
+    	    	<p id="footer-text">Enter your email address for sweet offers and upcoming events!</p>
+	            <form id="quickcontact" method="post" action="#">
+    	    	    <input type="email" name="email" id="quick-email" class="quick-email" placeholder='Email Address' required/>
+                   	<button type="submit" class="send" name="send">Sign Up</button>            		
+    	        </form>
+        	    <p id="footer_privacy"><a href="index.php?page=privacypolicy">Read Privacy Statement</a></p>
+        </section> <!-- end footer-signup -->
+		<ul class="social_links">
+           	<li><a href="https://www.facebook.com/" target="_blank" class="facebook">Facebook</a></li>
+            <li><a href="https://twitter.com/" target="_blank" class="twitter">Twitter</a></li>
+            <li><a href="http://www.youtube.com/" target="_blank" class="youtube">YouTube</a></li>
+            <li><a href="https://plus.google.com/" target="_blank" class="google">Google+</a></li>
+        </ul>
+        <h3 class="rss"><a href="rss.php">Subscribe to Feed</a></h3>
 		<nav id="mainfoot">
 			<ul>
 				<li class="home"><a href="index.php">Home</a></li>		
@@ -102,7 +122,7 @@ include_once( 'functions.php' ); //include_once to avoid fatal errors in calling
 				<li class="blog"><a href="index.php?page=blog">Blog</a></li>			
 			</ul>
 		</nav>
-		<p>&copy; 2013 Swirls All rights reserved. | Site developed by <a href="http://www.theconradconcept.com" target="blank">The Conrad Concept</a></p>
+		<p class="smallprint">&copy; 2013 Swirls All rights reserved. | Site developed by <a href="http://www.theconradconcept.com" target="blank">The Conrad Concept</a></p>
 	</footer>
 
 <!--</div> <!-- end wrapper -->
